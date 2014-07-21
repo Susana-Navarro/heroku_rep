@@ -15,7 +15,7 @@ end
 
 get '/' do
 	  
-	  redirect '/signin'
+	  redirect '/sign_in'
 end
 
 get '/sign_up' do
@@ -34,7 +34,8 @@ post '/sign-up-process' do
     session[:user_id] = @user.id
     redirect "/home"
 end
-
+post '/post-process' do
+	Post.create()
 get '/' do
 	redirect '/sign_in'
 end
@@ -56,4 +57,8 @@ end
 get '/home' do
 	current_user
 	erb :home
+end
+get '/sign_out' do
+  session.clear
+  redirect to('/sign_in')
 end

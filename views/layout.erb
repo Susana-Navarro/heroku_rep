@@ -1,6 +1,10 @@
- <% nav = ["home", "sign_in", "sign_up"]%>
+ <style>
+body{background-color:green}</style>  
+ <% nav = ["home", "sign_in", "sign_up", "sign_out"]%>
   <%nav.each do |link|%>
      <li> <a href="/<%=link%>"> 
        <%=link%></a> </li>
+        <if> 
+       	
        <%end%>
     <%=yield%>
